@@ -273,6 +273,13 @@ namespace realsense_camera
     rs_set_device_option(rs_device_, RS_OPTION_COLOR_HUE, config.color_hue, 0);
     rs_set_device_option(rs_device_, RS_OPTION_COLOR_SATURATION, config.color_saturation, 0);
     rs_set_device_option(rs_device_, RS_OPTION_COLOR_SHARPNESS, config.color_sharpness, 0);
+
+    rs_set_device_option(rs_device_, RS_OPTION_COLOR_ENABLE_AUTO_EXPOSURE, config.color_enable_auto_exposure, 0);
+    if (config.color_enable_auto_exposure == 0)
+    {
+      rs_set_device_option(rs_device_, RS_OPTION_COLOR_EXPOSURE, config.color_exposure, 0);
+    }
+
     rs_set_device_option(rs_device_, RS_OPTION_COLOR_ENABLE_AUTO_WHITE_BALANCE,
         config.color_enable_auto_white_balance, 0);
     if (config.color_enable_auto_white_balance == 0)
@@ -281,13 +288,9 @@ namespace realsense_camera
     }
 
     // Set R200 specific options
-    rs_set_device_option(rs_device_, RS_OPTION_R200_LR_AUTO_EXPOSURE_ENABLED, config.r200_lr_auto_exposure_enabled, 0);
-    if (config.r200_lr_auto_exposure_enabled == 0)
-    {
-      rs_set_device_option(rs_device_, RS_OPTION_R200_LR_EXPOSURE, config.r200_lr_exposure, 0);
-    }
     rs_set_device_option(rs_device_, RS_OPTION_R200_LR_GAIN, config.r200_lr_gain, 0);
     rs_set_device_option(rs_device_, RS_OPTION_R200_EMITTER_ENABLED, config.r200_emitter_enabled, 0);
+    rs_set_device_option(rs_device_, RS_OPTION_R200_LR_AUTO_EXPOSURE_ENABLED, config.r200_lr_auto_exposure_enabled, 0);
     if (config.r200_lr_auto_exposure_enabled == 1)
     {
       if (config.r200_auto_exposure_top_edge >= height_[RS_STREAM_DEPTH])
@@ -313,7 +316,10 @@ namespace realsense_camera
       edge_values_[3] = config.r200_auto_exposure_bottom_edge;
       rs_set_device_options(rs_device_, edge_options_, 4, edge_values_, 0);
     }
-
+    if (config.r200_lr_auto_exposure_enabled == 0)
+    {
+      rs_set_device_option(rs_device_, RS_OPTION_R200_LR_EXPOSURE, config.r200_lr_exposure, 0);
+    }
     // Depth Control Group Settings
     // NOTE: do NOT use the config.groups values as they are zero the first time called
     if (bit_level.test(5))  // 2^5 = 32 : Individual Depth Control settings
