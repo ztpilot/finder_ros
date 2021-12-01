@@ -84,20 +84,20 @@ Other stream resolutions and frame rates can optionally be provided as parameter
 ### Published Topics
 The published topics differ according to the device and parameters.
 After running the above command with D435i attached, the following list of topics will be available (This is a partial list. For full one type `rostopic list`):
-- /finder/color/camera_info
-- /finder/color/image_raw
-- /finder/color/metadata
-- /finder/extrinsics/imu_to_color
-- /finder/extrinsics/gps_to_color
-- /finder/extrinsics/depth_to_color
-- /finder/gyro/imu_info
-- /finder/gyro/metadata
-- /finder/gyro/data
-- /finder/accel/imu_info
-- /finder/accel/metadata
-- /finder/accel/data
-- /finder/slam/odom
-- /finder/slam/map
+- /f100i/color/camera_info
+- /f100i/color/image_raw
+- /f100i/color/metadata
+- /f100i/extrinsics/imu_to_color
+- /f100i/extrinsics/gps_to_color
+- /f100i/extrinsics/depth_to_color
+- /f100i/gyro/imu_info
+- /f100i/gyro/metadata
+- /f100i/gyro/data
+- /f100i/accel/imu_info
+- /f100i/accel/metadata
+- /f100i/accel/data
+- /f100i/slam/odom
+- /f100i/slam/map
 - /diagnostics
 
 ### Launch parameters
@@ -112,15 +112,8 @@ The following parameters are available by the wrapper:
 The pointcloud, if enabled, will be built based on the aligned_depth_to_color image.</br>
 - **filters**: any of the following options, separated by commas:</br>
  - ```colorizer```: will color the depth image. On the depth topic an RGB image will be published, instead of the 16bit depth values .
- - ```pointcloud```: will add a pointcloud topic `/camera/depth/color/points`.
-    * The texture of the pointcloud can be modified in rqt_reconfigure (see below) or using the parameters: `pointcloud_texture_stream` and `pointcloud_texture_index`. Run rqt_reconfigure to see available values for these parameters.</br>
-    * The depth FOV and the texture FOV are not similar. By default, pointcloud is limited to the section of depth containing the texture. You can have a full depth to pointcloud, coloring the regions beyond the texture with zeros, by setting `allow_no_texture_points` to true.
-    * pointcloud is of an unordered format by default. This can be changed by setting `ordered_pc` to true.
-- ```hdr_merge```: Allows depth image to be created by merging the information from 2 consecutive frames, taken with different exposure and gain values. The way to set exposure and gain values for each sequence in runtime is by first selecting the sequence id, using rqt_reconfigure `stereo_module/sequence_id` parameter and then modifying the `stereo_module/gain`, and `stereo_module/exposure`.</br> To view the effect on the infrared image for each sequence id use the `sequence_id_filter/sequence_id` parameter.</br> To initialize these parameters in start time use the following parameters:</br>
-  `stereo_module/exposure/1`, `stereo_module/gain/1`, `stereo_module/exposure/2`, `stereo_module/gain/2`</br>
-  \* For in-depth review of the subject please read the accompanying [white paper](https://dev.ztpilot.com/docs/high-dynamic-range-with-stereoscopic-depth-cameras).
 
- - The following filters have detailed descriptions in : https://github.com/ztpilot/finder_ros/blob/master/doc/post-processing-filters.md
+- The following filters have detailed descriptions in : https://github.com/ztpilot/finder_ros/blob/master/doc/post-processing-filters.md
    - ```disparity``` - convert depth to disparity before applying other filters and back.
    - ```spatial``` - filter the depth image spatially.
    - ```temporal``` - filter the depth image temporally.
