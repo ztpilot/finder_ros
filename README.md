@@ -103,7 +103,7 @@ After running the above command with D435i attached, the following list of topic
 ### Launch parameters
 The following parameters are available by the wrapper:
 - **serial_no**: will attach to the device with the given serial number (*serial_no*) number. Default, attach to available RealSense device in random.
-- **device_type**: will attach to a device whose name includes the given *device_type* regular expression pattern. Default, ignore device type. For example, device_type:=f100 will match f100i. device_type=f500(?!i) will match f500i.
+- **device_type**: will attach to a device whose name includes the given *device_type* regular expression pattern. Default, ignore device type. For example, device_type:=f100 will match f100i. device_type=f500(?!i) will match F500i.
 
 - **rosbag_filename**: Will publish topics from rosbag file.
 - **initial_reset**: On occasions the device was not closed properly and due to firmware issues needs to reset. If set to true, the device will reset prior to usage.
