@@ -148,9 +148,9 @@ Setting *unite_imu_method* creates a new topic, *imu*, that replaces the default
 - **publish_odom_tf**: If True (default) publish TF from odom_frame to pose_frame.
 
 ### Available services:
-- reset : Cause a hardware reset of the device. Usage: `rosservice call /camera/finder_camera/reset`
-- enable : Start/Stop all streaming sensors. Usage example: `rosservice call /camera/enable False"`
-- device_info : retrieve information about the device - serial_number, firmware_version etc. Type `osservice type /camera/finder_camera/device_info | rossrv show` for the full list. Call example: `rosservice call /camera/finder_camera/device_info`
+- reset : Cause a hardware reset of the device. Usage: `rosservice call /finder/reset`
+- enable : Start/Stop all streaming sensors. Usage example: `rosservice call /finder/enable False"`
+- device_info : retrieve information about the device - serial_number, firmware_version etc. Type `osservice type /finder/device_info | rossrv show` for the full list. Call example: `rosservice call /finder/device_info`
 
 ### Point Cloud
 Here is an example of how to start the camera node and make it publish the point cloud using the pointcloud option.
