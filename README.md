@@ -1,22 +1,21 @@
-# ROS Wrapper for Intel&reg; RealSense&trade; Devices
-These are packages for using Intel RealSense cameras (D400 series SR300 camera and T265 Tracking Module) with ROS.
+# ROS Wrapper for ZT Pilot&reg; Finder&trade; Devices
+These are packages for using ZT PILOT Finder cameras (F100 Tracking Module) with ROS.
 
-This version supports Kinetic, Melodic and Noetic distributions.
+This version supports Melodic and Noetic distributions.
 
-For running in ROS2 environment please switch to the [ros2 branch](https://github.com/IntelRealSense/realsense-ros/tree/ros2). </br>
+For running in ROS2 environment please switch to the [ros2 branch](https://github.com/meitiever/finder-ros/tree/ros2). </br>
 
-LibRealSense2 supported version: v2.50.0 (see [realsense2_camera release notes](https://github.com/IntelRealSense/realsense-ros/releases))
+LibRealSense2 supported version: v2.50.0 (see [finder_camera release notes](https://github.com/IntelRealSense/realsense-ros/releases))
 
 ## Installation Instructions
 
 ### Ubuntu
    #### Step 1: Install the ROS distribution
-   - #### Install [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu), on Ubuntu 16.04, [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) on Ubuntu 18.04 or [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) on Ubuntu 20.04.
+   - #### Install [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) on Ubuntu 18.04 or [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) on Ubuntu 20.04.
 
 ### Windows
    #### Step 1: Install the ROS distribution
    - #### Install [ROS Melodic or later on Windows 10](https://wiki.ros.org/Installation/Windows)
-
 
 ### There are 2 sources to install realsense2_camera from:
 
