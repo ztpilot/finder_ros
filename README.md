@@ -92,11 +92,11 @@ After running the above command with D435i attached, the following list of topic
 - /camera/extrinsics/depth_to_color
 - /camera/gyro/imu_info
 - /camera/gyro/metadata
-- /camera/gyro/sample
+- /camera/gyro/data
 - /camera/accel/imu_info
 - /camera/accel/metadata
-- /camera/accel/sample
-- /camera/slam/fusion
+- /camera/accel/data
+- /camera/slam/odom
 - /camera/slam/map
 - /diagnostics
 
