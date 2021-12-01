@@ -1,11 +1,11 @@
-# ROS Wrapper for ZT Pilot&reg; Finder&trade; Devices
-These are packages for using ZT PILOT Finder cameras (F100i Tracking Module) with ROS.
+# ROS Wrapper for ZT PILOT&reg; Finder&trade; Device
+These are packages for using ZT PILOT Finder camera (F100i Tracking Module) with ROS.
 
 This version supports Melodic and Noetic distributions.
 
-For running in ROS2 environment please switch to the [ros2 branch](https://github.com/ztpilot/finder-ros/tree/ros2). </br>
+For running in ROS2 environment please switch to the [ros2 branch](https://github.com/ztpilot/finder_ros/tree/ros2). </br>
 
-LibFinder supported version: v0.0.5 (see [finder_camera release notes](https://github.com/ztpilot/finder-ros/releases))
+LibFinder supported version: v0.0.5 (see [finder_camera release notes](https://github.com/ztpilot/finder_ros/releases))
 
 ## Installation Instructions
 
@@ -86,24 +86,23 @@ After running the above command with D435i attached, the following list of topic
 - /camera/color/camera_info
 - /camera/color/image_raw
 - /camera/color/metadata
+- /camera/extrinsics/imu_to_color
+- /camera/extrinsics/gps_to_color
 - /camera/extrinsics/depth_to_color
-- /camera/extrinsics/depth_to_infra1
-- /camera/extrinsics/depth_to_infra2
 - /camera/gyro/imu_info
 - /camera/gyro/metadata
 - /camera/gyro/sample
 - /camera/accel/imu_info
 - /camera/accel/metadata
 - /camera/accel/sample
+- /camera/slam/fusion
+- /camera/slam/map
 - /diagnostics
 
 >Using an F500 device the list differs a little by adding a 4-bit confidence grade (pulished as a mono8 image):
 >- /camera/confidence/camera_info
 >- /camera/confidence/image_rect_raw
 >
->It also replaces the 2 infrared topics with the single available one:
->- /camera/infra/camera_info
->- /camera/infra/image_raw
 
 If using F100i, the gyro and accel topics wont be available. Likewise, other topics will be available when using F500 (see below).
 
@@ -199,9 +198,6 @@ roslaunch finder_camera rs_camera.launch
 ```
 
 This will stream all camera sensors and publish on the appropriate ROS topics.
-
-The F100i sets its usb unique ID during initialization and without this parameter it wont be found.
-Once running it will publish, among others, the following topics:
 - /camera/odom/sample
 - /camera/accel/sample
 - /camera/gyro/sample
@@ -216,7 +212,7 @@ roslaunch finder_camera demo_f100i.launch
 The wrapper publishes static transformations(TFs). The Frame Ids are divided into 3 groups:
 - ROS convention frames: follow the format of <tf_prefix>\_<\_stream>"\_frame" for example: camera_depth_frame, camera_infra1_frame, etc.
 - Original frame coordinate system: with the suffix of <\_optical_frame>. For example: camera_infra1_optical_frame. Check the device documentation for specific coordinate system for each stream.
-- base_link: For example: camera_link. A reference frame for the device. In D400 series and SR300 it is the depth frame. In F100i, the pose frame.
+- base_link: For example: camera_link. A reference frame for the device. In F100i it is the depth frame. In F100i, the pose frame.
 
 
 ### finder_description package:
