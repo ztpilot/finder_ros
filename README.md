@@ -96,8 +96,10 @@ After running the above command with D435i attached, the following list of topic
 - /f100i/accel/imu_info
 - /f100i/accel/metadata
 - /f100i/accel/data
-- /f100i/slam/odom
-- /f100i/slam/map
+- /f100i/slam/pose
+- /f100i/slam/trajectory
+- /f100i/slam/local_map
+- /f100i/slam/global_map
 - /diagnostics
 
 ### Launch parameters
