@@ -100,13 +100,6 @@ After running the above command with D435i attached, the following list of topic
 - /camera/slam/map
 - /diagnostics
 
->Using an F500 device the list differs a little by adding a 4-bit confidence grade (pulished as a mono8 image):
->- /camera/confidence/camera_info
->- /camera/confidence/image_rect_raw
->
-
-If using F100i, the gyro and accel topics wont be available. Likewise, other topics will be available when using F500 (see below).
-
 ### Launch parameters
 The following parameters are available by the wrapper:
 - **serial_no**: will attach to the device with the given serial number (*serial_no*) number. Default, attach to available RealSense device in random.
