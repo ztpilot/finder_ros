@@ -84,20 +84,20 @@ Other stream resolutions and frame rates can optionally be provided as parameter
 ### Published Topics
 The published topics differ according to the device and parameters.
 After running the above command with D435i attached, the following list of topics will be available (This is a partial list. For full one type `rostopic list`):
-- /camera/color/camera_info
-- /camera/color/image_raw
-- /camera/color/metadata
-- /camera/extrinsics/imu_to_color
-- /camera/extrinsics/gps_to_color
-- /camera/extrinsics/depth_to_color
-- /camera/gyro/imu_info
-- /camera/gyro/metadata
-- /camera/gyro/data
-- /camera/accel/imu_info
-- /camera/accel/metadata
-- /camera/accel/data
-- /camera/slam/odom
-- /camera/slam/map
+- /finder/color/camera_info
+- /finder/color/image_raw
+- /finder/color/metadata
+- /finder/extrinsics/imu_to_color
+- /finder/extrinsics/gps_to_color
+- /finder/extrinsics/depth_to_color
+- /finder/gyro/imu_info
+- /finder/gyro/metadata
+- /finder/gyro/data
+- /finder/accel/imu_info
+- /finder/accel/metadata
+- /finder/accel/data
+- /finder/slam/odom
+- /finder/slam/map
 - /diagnostics
 
 ### Launch parameters
