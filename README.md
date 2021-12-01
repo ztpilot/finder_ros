@@ -1,11 +1,11 @@
 # ROS Wrapper for ZT Pilot&reg; Finder&trade; Devices
-These are packages for using ZT PILOT Finder cameras (F100 Tracking Module) with ROS.
+These are packages for using ZT PILOT Finder cameras (F100i Tracking Module) with ROS.
 
 This version supports Melodic and Noetic distributions.
 
-For running in ROS2 environment please switch to the [ros2 branch](https://github.com/meitiever/finder-ros/tree/ros2). </br>
+For running in ROS2 environment please switch to the [ros2 branch](https://github.com/ztpilot/finder-ros/tree/ros2). </br>
 
-LibRealSense2 supported version: v2.50.0 (see [finder_camera release notes](https://github.com/IntelRealSense/realsense-ros/releases))
+LibRealSense2 supported version: v2.50.0 (see [finder_camera release notes](https://github.com/ztpilot/finder-ros/releases))
 
 ## Installation Instructions
 
