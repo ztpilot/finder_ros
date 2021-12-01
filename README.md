@@ -25,7 +25,8 @@ LibFinder supported version: v0.0.5 (see [finder_camera release notes](https://g
 
    ### Step 1: Build the latest ZTpilot&reg; Finder&trade; SDK
 
-   - Create a [catkin](http://wiki.ros.org/catkin#Installing_catkin) workspace
+   - Create a [catkin](http://wiki.ros.org/catkin#Installing_catkin) workspace  
+
    *Ubuntu*
    ```bash
    mkdir -p ~/catkin_ws/src
@@ -186,27 +187,6 @@ rosrun rqt_reconfigure rqt_reconfigure
 
 ### Work with multiple cameras
 **Important Notice:** Launching multiple F100i cameras is currently not supported. This will be addressed in a later version. 
-
-```
-## Using F100i ##
-
-### Start the camera node
-To start the camera node in ROS:
-
-```bash
-roslaunch finder_camera rs_camera.launch
-```
-
-This will stream all camera sensors and publish on the appropriate ROS topics.
-- /camera/odom/sample
-- /camera/accel/sample
-- /camera/gyro/sample
-- /camera/mono/image_raw
-
-To visualize the pose output and frames in RViz, start:
-```bash
-roslaunch finder_camera demo_f100i.launch
-```
 
 ### About Frame ID
 The wrapper publishes static transformations(TFs). The Frame Ids are divided into 3 groups:
