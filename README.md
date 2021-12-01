@@ -17,7 +17,7 @@ LibFinder supported version: v0.0.5 (see [finder_camera release notes](https://g
    #### Step 1: Install the ROS distribution
    - #### Install [ROS Melodic or later on Windows 10](https://wiki.ros.org/Installation/Windows)
 
-### There are 1 source to install finder_camera from:
+### Install finder_camera from source:
 
 * ### Method 1: The Finder&trade; distribution:
      > This option is demonstrated in the [.travis.yml](https://github.com/ztpilot/finder_ros/blob/development/.travis.yml) file. It basically summerize the elaborate instructions in the following 2 steps:
