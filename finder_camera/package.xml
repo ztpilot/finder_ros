@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>realsense2_camera</name>
+  <name>finder_camera</name>
   <version>2.3.2</version>
-  <description>RealSense Camera package allowing access to Intel T265 Tracking module and SR300 and D400 3D cameras</description>
-  <maintainer email="doron.hirshberg@intel.com">Doron Hirshberg</maintainer>
+  <description>Camera package allowing access to ZT Pilot Finder 100i Tracking module</description>
+  <maintainer email="guoruonan@ztpilot.com">Steve Guo</maintainer>
   <license>Apache 2.0</license>
   
-  <url type="website">http://www.ros.org/wiki/RealSense</url>
-  <url type="bugtracker">https://github.com/intel-ros/realsense/issues</url>
+  <url type="website">http://www.ztpilot.com/wiki/f100</url>
+  <url type="bugtracker">https://github.com/ztpilot/finder_ros/issues</url>
 
-  <author email="sergey.dorodnicov@intel.com">Sergey Dorodnicov</author>
-  <author email="doron.hirshberg@intel.com">Doron Hirshberg</author>
+  <author email="guoruonan@ztpilot.com">Steve Guo</author>  
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>message_generation</build_depend>
   <depend>eigen</depend>

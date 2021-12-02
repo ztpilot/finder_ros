@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find finder_camera)/launch/finer_f100i.launch"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find finder_camera)/rviz/f100i.rviz" required="true" />
+</launch>
